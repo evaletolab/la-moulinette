@@ -6,6 +6,7 @@ import { singleton } from '../../src/SingletonTest';
 
 export default class About extends React.Component
 {
+
     render(){
         console.log(singleton.foo);
         return (

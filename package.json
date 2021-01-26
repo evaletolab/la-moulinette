@@ -20,8 +20,14 @@
   },
   "homepage": "https://github.com/evaletolab/la-moulinette#readme",
   "dependencies": {
+    "@teamwork/websocket-json-stream": "^2.0.0",
+    "express": "^4.17.1",
     "next": "^10.0.5",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "reconnecting-websocket": "^4.4.0",
+    "sharedb": "^1.6.0",
+    "sharedb-string-binding": "^1.0.0",
+    "ws": "^7.4.2"
   }
 }
