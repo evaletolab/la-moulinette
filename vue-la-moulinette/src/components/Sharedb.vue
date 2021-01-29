@@ -28,6 +28,13 @@ export default {
         this.initSharedb();
     },
 
+    watch:{
+        content: function(val, oldVal){
+            console.log(val, oldVal);
+
+        }
+    },
+
     methods:{
         initSharedb(){
             // move this to service
