@@ -5,6 +5,35 @@ const WebSocket = require('ws');
 const WebSocketJSONStream = require('@teamwork/websocket-json-stream');
 
 const backend = new ShareDB();
+
+//
+// run server and client
+const env = process.env.NODE_ENV || 'development';
+const exec = require('child_process').exec;
+const message = `
+An error occurred while attempting to start ${env}.
+Make sure that it is not running in another window.\n`;
+let context = {};
+switch (env) {
+    case 'angular':
+        context.root = '../angular/dist/angular';
+        context.port = 4200;
+        exec('ng build --watch',{cwd:'angular'}, function callback(error, stdout, stderr) {
+            if (error) {
+              console.log(message);
+              throw error;
+            }
+            console.log(stdout)
+          });                
+        break;
+    case 'vuejs':
+    
+        break;
+    default:
+        console.log('---> NODE_ENV=angular|vuesjs|nextjs node server/app');
+        process.exit();
+}
+
 createDoc(startServer);
 
 // Create initial document then fire callback
@@ -24,7 +53,7 @@ function createDoc(callback) {
 function startServer() {
     // Create a web server to serve files and listen to WebSocket connections
     const app = express();
-    app.use(express.static('./public'));
+    app.use(express.static('./angular/dist/angular'));
     const server = http.createServer(app);
 
     // Connect any incoming WebSocket connection to ShareDB
@@ -34,6 +63,6 @@ function startServer() {
         backend.listen(stream);
     });
 
-    server.listen(8080);
-    console.log('Listening on http://localhost:8080');
+    server.listen(context.port);
+    console.log('Listening on http://localhost:'+context.port);
 }
