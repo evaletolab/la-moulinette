@@ -39,7 +39,7 @@ createDoc(startServer);
 // Create initial document then fire callback
 function createDoc(callback) {
     const connection = backend.connect();
-    const doc = connection.get('la-moulinette');
+    const doc = connection.get('la-moulinette','test');
     doc.fetch(function (err) {
         if (err) throw err;
         if (doc.type === null) {
