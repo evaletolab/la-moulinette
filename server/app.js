@@ -27,7 +27,7 @@ switch (env) {
           });                
         break;
     case 'vuejs':
-    
+        context.port = 8090;      
         break;
     default:
         console.log('---> NODE_ENV=angular|vuesjs|nextjs node server/app');

@@ -4,7 +4,8 @@
   "description": "",
   "main": "",
   "scripts": {
-    "angular": "NODE_ENV=angular node server/app.js"
+    "angular": "NODE_ENV=angular node server/app.js",
+    "vuejs": "NODE_ENV=vuejs node server/app.js"
   },
   "repository": {
     "type": "git",
