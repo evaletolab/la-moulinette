@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "reconnecting-websocket": "^4.4.0",
     "register-service-worker": "^1.7.1",
+    "sharedb": "^1.6.0",
+    "sharedb-string-binding": "^1.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },

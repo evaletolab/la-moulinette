@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <Sharedb/>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <HelloMoulinette v-bind:visible="vis" name="Moulinette"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-import HelloMoulinette from '@/components/HelloMoulinette.vue';
+import Sharedb from '@/components/Sharedb.vue';
 
 export default {
   name: 'Home',
@@ -20,7 +20,7 @@ export default {
   },
   components: {
     HelloWorld,
-    HelloMoulinette
+    Sharedb,
   },
   mounted(){
     console.log("we are mounted", this.vis);
