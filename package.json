@@ -4,9 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "angular": "NODE_ENV=angular node server/app.js"
   },
   "repository": {
     "type": "git",
